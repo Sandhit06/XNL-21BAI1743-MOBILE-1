@@ -1,0 +1,19 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Banking API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/transactions/transfer": {
+            "post": {
+                "summary": "Transfer Money",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+stages:
+  - build
+  - deploy
+
+build:
+  script:
+    - docker-compose build
+
+deploy:
+  script:
+    - kubectl apply -f kubernetes/deployment.yaml
