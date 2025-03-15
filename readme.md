@@ -18,6 +18,37 @@ Swiftpay is a **highly scalable**, **event-driven**, **microservices-based banki
 - ✅ Fully Documented API → Swagger documentation for seamless integration.
 - ✅ React.js Frontend → Interactive banking dashboard.
 
+## ⚙️ Tech Stack Used
+
+### **Backend Technologies**
+- **Node.js** → JavaScript runtime for backend development.
+- **Express.js** → Lightweight and fast web framework for Node.js.
+- **MongoDB** → NoSQL database for handling transactions & user data.
+- **Kafka** → Event-driven messaging for microservices communication.
+- **Firebase Authentication** → Secure user login with JWT.
+- **Firebase Cloud Messaging (FCM)** → Push notifications for transactions.
+- **RabbitMQ** → Optional message queue for async processing.
+- **Docker** → Containerized application for scalability.
+- **Kubernetes** → Orchestrating and deploying microservices.
+
+### **Frontend Technologies**
+- **React.js** → User-friendly and scalable banking dashboard.
+- **Redux** → State management for efficient UI updates.
+- **Axios** → API calls to backend services.
+
+### **DevOps & CI/CD**
+- **GitHub Actions** → Automating builds, testing, and deployments.
+- **GitLab CI/CD** → Continuous integration & delivery.
+- **Terraform** → Infrastructure as code for AWS/GCP deployments.
+- **Helm** → Managing Kubernetes applications.
+
+### **Security & Compliance**
+- **JWT (JSON Web Tokens)** → Secure authentication & API access.
+- **TLS Encryption** → Protecting data in transit.
+- **OAuth 2.0** → Secure third-party login integrations.
+- **PCI DSS Compliance** → Secure handling of payment data.
+
+
 ## 📂 Project Structure
 
 ```shell
@@ -127,4 +158,88 @@ spec:
         ports:
         - containerPort: 4002
 ```
+### 🔄 CI/CD Pipeline
+GitHub Actions Workflow (.github/workflows/deploy.yml)
+```yaml
+name: Deploy Banking App
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Build Docker Images
+        run: docker-compose build
+      - name: Deploy to Kubernetes
+        run: kubectl apply -f infrastructure/kubernetes/
+```
 
+## 📄 Documentation
+### Swagger API Documentation
+```shell
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Banking API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/transactions/transfer": {
+      "post": {
+        "summary": "Transfer Money",
+        "responses": {
+          "200": { "description": "Success" }
+        }
+      }
+    }
+  }
+}
+```
+
+## Troubleshooting
+No detections in the video
+Ensure your model file is correctly loaded and the video file path is correct. Check if the video has clear visibility and minimal occlusions.
+
+## ⚠ Disclaimer
+This tool is developed for educational and developmental purposes. It's crucial to understand the implications and responsibilities of using such technologies in real-world applications.
+
+
+## Still need help?
+Open an issue on our GitHub repository, and we will help you as soon as possible.
+
+Enjoy exploring and extending this project! Feel free to contribute and suggest improvements.
+
+## Contact
+
+If you want to contact me you can reach me at [Twitter](https://x.com/SandhitK).
+
+## Developer
+<table>
+    <tr align="center">
+        <td>
+        Sandhit Karmakar
+        <p align="center">
+            <img src = "https://avatars.githubusercontent.com/u/90787826?v=4" width="150" height="150" alt="Dhruv Shah">
+        </p>
+            <p align="center">
+                <a href = "https://github.com/Sandhit06">
+                    <img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/>
+                </a>
+                <a href = "https://www.linkedin.com/in/sandhit-karmakar/" target="_blank">
+                    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
+                </a>
+                <a href = "mailto:sandhitkarmakar@gmail.com" target="_blank">
+                    <img src = "https://www.iconninja.com/files/312/807/734/share-send-email-chat-circle-message-mail-icon.svg" width="36" height="36" alt="Email"/>
+                </a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<p align="center">
+    Made with ❤️ by <a href="https://github.com/Sandhit06">Sandhit Karmakar</a>
+</p>
